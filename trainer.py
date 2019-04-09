@@ -304,7 +304,7 @@ class Trainer(object):
                 pbar.set_description(
                     (
                         "{:.1f}s - loss: {:.3f} - acc: {:.3f}".format(
-                            (toc-tic), loss.data[0], acc.data[0]
+                            (toc-tic), loss.data.item(), acc.data.item()
                         )
                     )
                 )
