@@ -105,7 +105,7 @@ class retina(object):
             from_y, to_y = patch_y[i], patch_y[i] + size
 
             # cast to ints
-            from_x, to_x = from_x.item(), to_x.data.iten()
+            from_x, to_x = from_x.item(), to_x.data.item()
             from_y, to_y = from_y.data.item(), to_y.data.item()
             # pad tensor in case exceeds
             if self.exceeds(from_x, to_x, from_y, to_y, T):
