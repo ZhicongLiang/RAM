@@ -289,8 +289,8 @@ class Trainer(object):
                 acc = 100 * (correct.sum() / len(y))
 
                 # store
-                losses.update(loss.data[0], x.size()[0])
-                accs.update(acc.data[0], x.size()[0])
+                losses.update(loss.data.item(), x.size()[0])
+                accs.update(acc.data.item(), x.size()[0])
 
                 # compute gradients and update SGD
                 self.optimizer.zero_grad()
