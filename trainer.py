@@ -418,8 +418,8 @@ class Trainer(object):
             acc = 100 * (correct.sum() / len(y))
 
             # store
-            losses.update(loss.data[0], x.size()[0])
-            accs.update(acc.data[0], x.size()[0])
+            losses.update(loss.data.item(), x.size()[0])
+            accs.update(acc.data.item(), x.size()[0])
 
             # log to tensorboard
             if self.use_tensorboard:
