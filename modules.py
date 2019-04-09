@@ -105,8 +105,11 @@ class retina(object):
             from_y, to_y = patch_y[i], patch_y[i] + size
 
             # cast to ints
-            from_x, to_x = from_x.data[0], to_x.data[0]
-            from_y, to_y = from_y.data[0], to_y.data[0]
+            try:
+                from_x, to_x = from_x.data[0], to_x.data[0]
+                from_y, to_y = from_y.data[0], to_y.data[0]
+            except IndentationError:
+                print(from_x, to_x)
 
             # pad tensor in case exceeds
             if self.exceeds(from_x, to_x, from_y, to_y, T):
